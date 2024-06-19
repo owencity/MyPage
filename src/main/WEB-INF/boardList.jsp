@@ -29,15 +29,20 @@
 			<td>조회수</td>
 		</tr>
 		<c:foreach var="vo" items="${list}">
-		
-	
+		 <tr>
+		 	<td>${vo.idx}</td>
+		 	<td><a href="boardContent.do?idx=${vo.idx}">${vo.title}</a>
+		 	<td>${vo.writer}</td>
+		 	<td>$fn:split(vo.indate," ")[0]}</td>
+		 	<td>${vo.count}</td>
+		</tr>
+		</c:foreach>
 	</table>
-	
-	
+	<a href="boardForm.do" class="btn btn-primary btn-sm">글쓰기</a>
 	</div>
-	<div class="panel-footer">My page</div>
+	 <div class="panel-footer">My page</div>
 	</div>
-
 </div>
+
 </body>
 </html>
