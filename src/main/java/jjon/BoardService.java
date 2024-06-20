@@ -2,10 +2,7 @@ package jjon;
 
 import java.util.List;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Service
 public class BoardService {
@@ -23,12 +20,17 @@ public class BoardService {
 		return list;
 	}
 	
-	public boolean boardInsert() {
+	public boolean boardInsert(BoardDto boardDto) {
 		boolean result = boardMapper.boardInsert(boardDto);
-		
 		return result;
-		
-		
+	}
+	public boolean boardDelete(BoardDto boardDto) {
+		boolean result = boardMapper.boardDelete(boardDto);
+		return result;
+	}
+	
+	public void boardUpdate(BoardDto boardDto) {
+		boardMapper.boardUpdate(boardDto);
 	}
 
 }
